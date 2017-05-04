@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>上傳檔案</title>
+	<style>
+		input[type="file"]{
+			margin: .5rem;
+			display: block;
+		}
+		a{
+			margin: .5rem;
+		}
+	</style>
+</head>
+<body>
+	<h1>上傳檔案</h1>
+	<form id="form" action="upload.php" enctype="multipart/form-data" method="post">
+		<div class="files">
+			<input type="file" name="file1" />
+		</div>
+		<a class="addFile" href="#">增加檔案</a><br>
+		<input type="submit" name="submit" value="開始上傳">
+	</form>
+	<script>
+		var count = 1;
+		document.querySelector(".addFile").onclick = function(){
+			var f = document.createElement("input");
+			f.type = "file";
+			f.name = "file" + (++count);
+			document.querySelector(".files").appendChild(f);
+		}
+	</script>
+
+</body>
+</html>
